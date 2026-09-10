@@ -1,0 +1,292 @@
+:root {
+    --preto: #0d0d0d;
+    --preto-claro: #1a1a1a;
+    --laranja: #ff8c00;
+    --laranja-escuro: #cc7000;
+    --branco: #f5f5f5;
+    --cinza: #999;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--preto);
+    color: var(--branco);
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ---------- HEADER ---------- */
+header.topo {
+    background: var(--preto);
+    border-bottom: 3px solid var(--laranja);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+}
+.logo span.marca { color: var(--branco); }
+.logo span.store { color: var(--laranja); }
+.logo-img {
+    height: 56px;
+    width: auto;
+    display: block;
+}
+
+nav.menu {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav.menu a, nav.menu button {
+    color: var(--branco);
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+nav.menu a:hover, nav.menu button:hover {
+    background: var(--laranja);
+    color: var(--preto);
+}
+
+.carrinho-badge {
+    background: var(--laranja);
+    color: var(--preto);
+    border-radius: 50%;
+    padding: 2px 8px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-left: 4px;
+}
+
+/* ---------- BOTÕES ---------- */
+.btn {
+    display: inline-block;
+    background: var(--laranja);
+    color: var(--preto);
+    font-weight: 700;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background .2s;
+}
+.btn:hover { background: var(--laranja-escuro); }
+
+.btn-outline {
+    background: transparent;
+    color: var(--laranja);
+    border: 2px solid var(--laranja);
+}
+.btn-outline:hover { background: var(--laranja); color: var(--preto); }
+
+.btn-perigo { background: #c0392b; color: #fff; }
+
+/* ---------- CONTAINER ---------- */
+.container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+/* ---------- BANNER / HERO ---------- */
+.hero {
+    background: linear-gradient(135deg, var(--preto-claro), var(--preto));
+    border: 2px solid var(--laranja);
+    border-radius: 14px;
+    padding: 40px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.hero h1 { font-size: 32px; margin-bottom: 8px; }
+.hero h1 .store { color: var(--laranja); }
+.hero p { color: var(--cinza); }
+
+.evento-card {
+    background: var(--preto-claro);
+    border: 1px solid var(--laranja);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.evento-card img { width: 100%; max-width: 340px; object-fit: cover; }
+.evento-card .info { padding: 20px; flex: 1; min-width: 220px; }
+.evento-card h3 { color: var(--laranja); margin-top: 0; }
+
+/* ---------- CATEGORIAS ---------- */
+.categorias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 14px;
+    margin-bottom: 30px;
+}
+.categoria-card {
+    background: var(--preto-claro);
+    border: 1px solid #2b2b2b;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px 10px;
+    font-weight: 700;
+    transition: border .2s, transform .2s;
+}
+.categoria-card:hover {
+    border-color: var(--laranja);
+    transform: translateY(-3px);
+}
+
+/* ---------- PRODUTOS ---------- */
+.produtos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+.produto-card {
+    background: var(--preto-claro);
+    border: 1px solid #2b2b2b;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border .2s, transform .2s;
+}
+.produto-card:hover { border-color: var(--laranja); transform: translateY(-4px); }
+.produto-card img { width: 100%; height: 220px; object-fit: cover; }
+.produto-card .corpo { padding: 14px; flex: 1; display: flex; flex-direction: column; }
+.produto-card h4 { margin: 0 0 6px; font-size: 16px; }
+.produto-card .preco { color: var(--laranja); font-size: 20px; font-weight: 800; margin: 8px 0; }
+.produto-card .categoria-tag {
+    font-size: 12px; color: var(--cinza); text-transform: uppercase; letter-spacing: .5px;
+}
+
+/* ---------- FORMULÁRIOS ---------- */
+.form-box {
+    background: var(--preto-claro);
+    border: 1px solid #2b2b2b;
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 480px;
+    margin: 30px auto;
+}
+.form-box h2 { color: var(--laranja); text-align: center; margin-top: 0; }
+
+label { display: block; margin: 14px 0 6px; font-weight: 600; font-size: 14px; }
+input[type=text], input[type=email], input[type=password], input[type=number],
+input[type=date], input[type=tel], select, textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    background: var(--preto);
+    color: var(--branco);
+    font-size: 14px;
+}
+textarea { resize: vertical; min-height: 80px; }
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--laranja); }
+
+.radio-group { display: flex; gap: 16px; margin: 10px 0; flex-wrap: wrap; }
+.radio-group label { display: flex; align-items: center; gap: 6px; font-weight: 500; margin: 0; }
+
+.alerta { padding: 12px 16px; border-radius: 8px; margin-bottom: 16px; font-weight: 600; }
+.alerta-erro { background: #4a1010; color: #ff9b9b; border: 1px solid #a33; }
+.alerta-sucesso { background: #113311; color: #9bffb0; border: 1px solid #2a2; }
+
+/* ---------- TABELAS (ADMIN) ---------- */
+table.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--preto-claro);
+    border-radius: 10px;
+    overflow: hidden;
+}
+table.admin-table th, table.admin-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #2b2b2b;
+    text-align: left;
+    font-size: 14px;
+}
+table.admin-table th { background: #000; color: var(--laranja); }
+table.admin-table tr:hover { background: #222; }
+
+.admin-tabs { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+.admin-tabs a {
+    padding: 10px 18px; border-radius: 8px; background: var(--preto-claro);
+    border: 1px solid #2b2b2b; font-weight: 700;
+}
+.admin-tabs a.ativo, .admin-tabs a:hover { background: var(--laranja); color: var(--preto); }
+
+/* ---------- CARRINHO ---------- */
+.carrinho-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--preto-claro);
+    border: 1px solid #2b2b2b;
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+.carrinho-item img { width: 70px; height: 70px; object-fit: cover; border-radius: 8px; }
+.carrinho-item .info { flex: 1; min-width: 150px; }
+.carrinho-item input[type=number] { width: 70px; }
+
+.resumo-box {
+    background: var(--preto-claro);
+    border: 2px solid var(--laranja);
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 360px;
+    margin-left: auto;
+}
+.resumo-box .linha { display: flex; justify-content: space-between; margin: 8px 0; }
+.resumo-box .total { font-size: 22px; font-weight: 800; color: var(--laranja); }
+
+/* ---------- PAGAMENTO ---------- */
+.pagamento-opcoes { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr)); gap: 12px; }
+.pagamento-opcoes label {
+    display: flex; align-items: center; gap: 8px; margin: 0;
+    background: var(--preto); border: 1px solid #333; border-radius: 8px; padding: 12px;
+    cursor: pointer;
+}
+.pagamento-opcoes input:checked + span { color: var(--laranja); }
+
+/* ---------- FOOTER ---------- */
+footer {
+    background: #000;
+    border-top: 3px solid var(--laranja);
+    padding: 30px 24px;
+    margin-top: 50px;
+    text-align: center;
+    color: var(--cinza);
+}
+footer a { color: var(--laranja); font-weight: 600; }
+footer .redes { margin-top: 10px; }
+footer .redes a { margin: 0 8px; }
+
+.mapa-wrap { border-radius: 12px; overflow: hidden; border: 2px solid var(--laranja); margin-top: 16px; }
+
+.vazio { text-align: center; padding: 60px 20px; color: var(--cinza); }
